@@ -1,7 +1,7 @@
 
 # Hash
 
-  C pointer hash.
+  C hash implementation based on khash.
 
 ## Example
 
