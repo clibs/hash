@@ -28,67 +28,69 @@ name: tobi
 
 ## API
 
+### hash_t
+
+  The hash type.
+
+### hash_t *hash_new()
+
+  Allocate and initialize a new hash.
+
+### hash_free(hash_t *self)
+
+  Free the hash, you must free values appropriately.
+
+### unsigned int hash_size(hash_t *self)
+
+  Return the number of values in the hash table.
+
+### void hash_clear(hash_t *self)
+
+  Remove all values from the hash.
+
+### void hash_set(hash_t *self, char *key, void *val);
+
+  Set `key` to `val`.
+
+### void *hash_get(hash_t *self, char *key);
+
+  Get value for `key` or __NULL__.  
+
+### int hash_has(hash_t *self, char *key);
+
+  Check if the hash contains `key`.
+
+### void hash_del(hash_t *self, char *key);
+
+  Remove `key` from the hash.
+
+### hash_each(hash_t *self, block)
+
+  A macro for iterating key/value pairs.
+
 ```c
-/*
- * Hash type.
- */
+hash_each(users, {
+  printf("%s: %s\n", key, (char *) val);
+})
+```
 
-typedef khash_t(ptr) hash_t;
+### hash_each_key(hash_t *self, block)
 
-/*
- * Allocate a new hash.
- */
+  A macro for iterating keys only.
 
-#define hash_new() kh_init(ptr)
+```c
+hash_each_key(users, {
+  printf("%s\n", key);
+})
+```
 
-/*
- * Destroy the hash.
- */
+### hash_each_val(hash_t *self, block)
 
-#define hash_free(self) kh_destroy(ptr, self)
+  A macro for iterating values only.
 
-/*
- * Hash size.
- */
+```c
+hash_each_val(users, {
+  printf("%s\n", (char *) val);
+})
+```
 
-#define hash_size kh_size
-
-/*
- * Remove all pairs in the hash.
- */
-
-#define hash_clear(self) kh_clear(ptr, self)
-
-/*
- * Iterate hash keys and ptrs, populating
- * `key` and `val`.
- */
-
-#define hash_each(self, block);
-
-/*
- * Iterate hash keys, populating `key`.
- */
-
-#define hash_each_key(self, block);
-
-/*
- * Iterate hash ptrs, populating `val`.
- */
-
-#define hash_each_val(self, block);
-
-// protos
-
-void
-hash_set(hash_t *self, char *key, void *val);
-
-void *
-hash_get(hash_t *self, char *key);
-
-int
-hash_has(hash_t *self, char *key);
-
-void
-hash_del(hash_t *self, char *key);
-````
