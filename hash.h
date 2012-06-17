@@ -39,6 +39,12 @@ typedef khash_t(ptr) hash_t;
 #define hash_size kh_size
 
 /*
+ * Remove all pairs in the hash.
+ */
+
+#define hash_clear(self) kh_clear(ptr, self)
+
+/*
  * Iterate hash keys and ptrs, populating
  * `key` and `val`.
  */
@@ -93,5 +99,8 @@ hash_has(hash_t *self, char *key);
 
 void
 hash_del(hash_t *self, char *key);
+
+void
+hash_clear(hash_t *self);
 
 #endif /* HASH */

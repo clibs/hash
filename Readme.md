@@ -54,6 +54,12 @@ typedef khash_t(ptr) hash_t;
 #define hash_size kh_size
 
 /*
+ * Remove all pairs in the hash.
+ */
+
+#define hash_clear(self) kh_clear(ptr, self)
+
+/*
  * Iterate hash keys and ptrs, populating
  * `key` and `val`.
  */

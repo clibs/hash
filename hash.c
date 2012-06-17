@@ -107,6 +107,17 @@ test_hash_del() {
 }
 
 void
+test_hash_clear() {
+  hash_t *hash = hash_new();
+  hash_set(hash, "foo", "bar");
+  hash_set(hash, "bar", "baz");
+  hash_set(hash, "raz", "jaz");
+  assert(3 == hash_size(hash));
+  hash_clear(hash);
+  assert(0 == hash_size(hash));
+}
+
+void
 test_hash_each() {
   hash_t *hash = hash_new();
   hash_set(hash, "name", "tj");
@@ -169,6 +180,7 @@ main(){
   test_hash_has();
   test_hash_del();
   test_hash_size();
+  test_hash_clear();
   test_hash_each();
   test_hash_each_key();
   test_hash_each_val();
