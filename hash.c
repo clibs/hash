@@ -43,7 +43,7 @@ hash_has(hash_t *self, char *key) {
  */
 
 void
-hash_remove(hash_t *self, char *key) {
+hash_del(hash_t *self, char *key) {
   khiter_t k = kh_get(ptr, self, key);
   kh_del(ptr, self, k);
 }
@@ -96,13 +96,13 @@ test_hash_size() {
 }
 
 void
-test_hash_remove() {
+test_hash_del() {
   hash_t *hash = hash_new();
   hash_set(hash, "foo", "bar");
   assert(1 == hash_has(hash, "foo"));
   assert(0 == hash_has(hash, "bar"));
-  hash_remove(hash, "foo");
-  hash_remove(hash, "bar");
+  hash_del(hash, "foo");
+  hash_del(hash, "bar");
   assert(0 == hash_has(hash, "foo"));
 }
 
@@ -167,7 +167,7 @@ main(){
   test_hash_set();
   test_hash_get();
   test_hash_has();
-  test_hash_remove();
+  test_hash_del();
   test_hash_size();
   test_hash_each();
   test_hash_each_key();

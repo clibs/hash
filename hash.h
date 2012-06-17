@@ -92,6 +92,6 @@ int
 hash_has(hash_t *self, char *key);
 
 void
-hash_remove(hash_t *self, char *key);
+hash_del(hash_t *self, char *key);
 
 #endif /* HASH */
