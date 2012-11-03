@@ -8,7 +8,7 @@
 #ifndef HASH
 #define HASH
 
-#include "deps/khash/khash.h"
+#include "khash.h"
 
 // pointer hash
 
