@@ -133,10 +133,10 @@ test_hash_each() {
     n++;
   });
 
-  assert(0 == strcmp("age", keys[0]));
-  assert(0 == strcmp("name", keys[1]));
-  assert(0 == strcmp("25", vals[0]));
-  assert(0 == strcmp("tj", vals[1]));
+  assert(0 == strcmp("age", keys[0]) || 0 == strcmp("name", keys[0]));
+  assert(0 == strcmp("age", keys[1]) || 0 == strcmp("name", keys[1]));
+  assert(0 == strcmp("25", vals[0]) || 0 == strcmp("tj", vals[0]));
+  assert(0 == strcmp("25", vals[1]) || 0 == strcmp("tj", vals[1]));
 }
 
 void
@@ -152,8 +152,8 @@ test_hash_each_key() {
     keys[n++] = key;
   });
 
-  assert(0 == strcmp("age", keys[0]));
-  assert(0 == strcmp("name", keys[1]));
+  assert(0 == strcmp("age", keys[0]) || 0 == strcmp("name", keys[0]));
+  assert(0 == strcmp("age", keys[1]) || 0 == strcmp("name", keys[1]));
 }
 
 void
@@ -169,8 +169,8 @@ test_hash_each_val() {
     vals[n++] = val;
   });
 
-  assert(0 == strcmp("25", vals[0]));
-  assert(0 == strcmp("tj", vals[1]));
+  assert(0 == strcmp("25", vals[0]) || 0 == strcmp("tj", vals[0]));
+  assert(0 == strcmp("25", vals[1]) || 0 == strcmp("tj", vals[1]));
 }
 
 int
