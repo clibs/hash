@@ -5,5 +5,5 @@
   "description": "Hash wrapper around khash",
   "keywords": ["hash", "khash", "container"],
   "license": "MIT",
-  "src": ["src/hash.c", "src/hash.h", "src/khash.h"]
+  "src": ["hash.c", "hash.h", "khash.h"]
 }
