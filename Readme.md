@@ -5,7 +5,7 @@
 
 ## Installation
 
-   $ cpm install visionmedia/hash.c
+```$ cpm install visionmedia/hash.c```
 
 ## Example
 
