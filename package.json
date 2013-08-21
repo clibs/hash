@@ -3,7 +3,19 @@
   "version": "0.0.1",
   "repo": "visionmedia/hash.c",
   "description": "Hash wrapper around khash",
-  "keywords": ["hash", "khash", "container"],
+  "keywords": [
+    "hash",
+    "khash",
+    "container"
+  ],
   "license": "MIT",
-  "src": ["hash.c", "hash.h", "khash.h"]
+  "src": [
+    "hash.c",
+    "hash.h",
+    "khash.h"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/visionmedia/hash.c.git"
+  }
 }
