@@ -1,7 +1,7 @@
 {
   "name": "hash",
   "version": "0.0.1",
-  "repo": "visionmedia/hash.c",
+  "repo": "clibs/hash",
   "description": "Hash wrapper around khash",
   "keywords": ["hash", "khash", "container"],
   "license": "MIT",

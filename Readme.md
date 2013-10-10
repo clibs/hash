@@ -1,11 +1,15 @@
 
-# Hash
+# hash
 
   C hash implementation based on khash.
 
 ## Installation
 
-   $ cpm install visionmedia/hash.c
+  Install with [clib](https://github.com/clibs/clib):
+
+```
+$ clib install clibs/hash
+```
 
 ## Example
 
