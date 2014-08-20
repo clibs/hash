@@ -92,16 +92,16 @@ typedef khash_t(ptr) hash_t;
 // protos
 
 void
-hash_set(hash_t *self, char *key, void *val);
+hash_set(hash_t *self, const char *key, void *val);
 
 void *
-hash_get(hash_t *self, char *key);
+hash_get(hash_t *self, const char *key);
 
 int
-hash_has(hash_t *self, char *key);
+hash_has(hash_t *self, const char *key);
 
 void
-hash_del(hash_t *self, char *key);
+hash_del(hash_t *self, const char *key);
 
 void
 hash_clear(hash_t *self);
