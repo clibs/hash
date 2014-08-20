@@ -52,7 +52,8 @@ typedef khash_t(ptr) hash_t;
 #define hash_each(self, block) { \
    const char *key; \
    void *val; \
-    for (khiter_t k = kh_begin(self); k < kh_end(self); ++k) { \
+   khiter_t k; \
+    for (k = kh_begin(self); k < kh_end(self); ++k) { \
       if (!kh_exist(self, k)) continue; \
       key = kh_key(self, k); \
       val = kh_value(self, k); \
@@ -66,7 +67,8 @@ typedef khash_t(ptr) hash_t;
 
 #define hash_each_key(self, block) { \
     const char *key; \
-    for (khiter_t k = kh_begin(self); k < kh_end(self); ++k) { \
+    khiter_t k; \
+    for (k = kh_begin(self); k < kh_end(self); ++k) { \
       if (!kh_exist(self, k)) continue; \
       key = kh_key(self, k); \
       block; \
@@ -79,7 +81,8 @@ typedef khash_t(ptr) hash_t;
 
 #define hash_each_val(self, block) { \
     void *val; \
-    for (khiter_t k = kh_begin(self); k < kh_end(self); ++k) { \
+    khiter_t k; \
+    for (k = kh_begin(self); k < kh_end(self); ++k) { \
       if (!kh_exist(self, k)) continue; \
       val = kh_value(self, k); \
       block; \
