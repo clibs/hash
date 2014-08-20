@@ -34,6 +34,7 @@ hash_get(hash_t *self, char *key) {
 
 inline int
 hash_has(hash_t *self, char *key) {
+  if(!hash_size(self)) return 0;
   khiter_t k = kh_get(ptr, self, key);
   return kh_exist(self, k);
 }
