@@ -12,7 +12,7 @@
 
 // pointer hash
 
-KHASH_MAP_INIT_STR(ptr, void *);
+KHASH_MAP_INIT_STR(ptr, void *)
 
 /*
  * Hash type.
